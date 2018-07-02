@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userDetail"
+            type="br.com.sankhya.viewmodel.UserDatailViewmodel"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.UserDetailActivity">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    fontPath="fonts/Arkhip_font.ttf"
+                    android:id="@+id/collapsing"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:expandedTitleTextAppearance="@android:color/transparent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <ImageView
+                        android:id="@+id/imgWallpaperItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:transitionName="wallpaper" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="590dp"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:layout_editor_absoluteY="352dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_model"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:padding="12dp"
+                            android:text="Wallpaper descriptiion" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </android.support.v4.widget.NestedScrollView>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabSave"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#E75043"
+                android:elevation="6dp"
+                app:layout_anchor="@id/app_bar_layout"
+                app:layout_anchorGravity="bottom|right|end"
+                android:src="@drawable/ic_save_black_24dp"
+                android:onClick="@{() -> userDetail.onClickSaveDetail()}"
+                android:layout_marginRight="30dp"
+                app:pressedTranslationZ="12dp" />
+
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    app:layout_anchor="@id/app_bar_layout"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:elevation="6dp"
+                    android:visibility="gone"
+                    app:pressedTranslationZ="12dp"
+                    app:layout_anchorGravity="bottom|center"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_border_icon"
+                    app:srcCompat="@drawable/vt_user_photo_default"/>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+
+    </RelativeLayout>
+</layout>

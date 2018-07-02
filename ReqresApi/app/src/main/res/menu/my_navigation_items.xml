@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_perfil"
+          android:title="Usuários"
+          android:icon="@drawable/ic_person_black_24dp" />
+
+    <item android:id="@+id/action_countries"
+          android:title="Recentes"
+          android:icon="@drawable/ic_save_black_24dp" />
+
+    <item android:id="@+id/action_visits"
+          android:title="Preferências"
+          android:icon="@drawable/ic_hand_slide" />
+
+</menu>
